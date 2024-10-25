@@ -1,0 +1,46 @@
+using Microsoft.VisualBasic;
+
+namespace aula_1
+{
+public class Fixacao
+{
+
+    static void Main(string[] args)
+    {
+            // string nome;
+            // int quartos;
+            // decimal preco;
+            // string ultimoNome;
+            // int idade;
+            // double altura;
+
+
+            // System.Console.WriteLine("digite seu nome: ");
+            // nome = string.Parse(System.Console.ReadLine());
+
+            // System.Console.writeline("quantos quartos tem na sua casa: ");
+            // quartos = int.Parse(System.Console.ReadLine());
+
+
+            // System.Console.writeline("entre com o preço de um produto: ");
+            // preco = float.Parse(System.Console.ReadLine());
+
+
+            // System.Console.writeline("entre seu ultimo nome, iadade e altura: ");
+            // preco = float.Parse(System.Console.ReadLine());
+
+
+            // Console.Write("Entre seu último nome, idade e altura (mesma linha): ");
+            // string[] entrada = Console.ReadLine().Split(' ');
+            // ultimoNome = entrada[0];
+            // idade = int.Parse(entrada[1]);
+            // altura = double.Parse(entrada[2]);
+
+
+
+
+
+        }
+
+    }
+}

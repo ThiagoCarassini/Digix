@@ -1,0 +1,14 @@
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\bin\Debug\net8.0\aula_1.exe
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\bin\Debug\net8.0\aula_1.deps.json
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\bin\Debug\net8.0\aula_1.runtimeconfig.json
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\bin\Debug\net8.0\aula_1.dll
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\bin\Debug\net8.0\aula_1.pdb
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\aula_1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\aula_1.AssemblyInfoInputs.cache
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\aula_1.AssemblyInfo.cs
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\aula_1.csproj.CoreCompileInputs.cache
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\aula_1.dll
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\refint\aula_1.dll
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\aula_1.pdb
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\aula_1.genruntimeconfig.cache
+C:\Users\thiagocarassini\Desktop\projeto digix\aula_1\obj\Debug\net8.0\ref\aula_1.dll
