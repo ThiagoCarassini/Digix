@@ -1,0 +1,49 @@
+using System;
+
+namespace Aula5
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            int numero;
+            int menor = int.MaxValue; 
+            int maior = int.MinValue; 
+
+            Console.WriteLine("Digite uma sequência de números positivos (digite -1 para sair):");
+
+            while (true)
+            {
+                Console.Write("Digite um número: ");
+                numero = int.Parse(Console.ReadLine());
+
+                if (numero == -1) 
+                    break;
+
+                if (numero > 0) 
+                {
+                    if (numero < menor)
+                        menor = numero;
+
+                    if (numero > maior)
+                        maior = numero;
+                }
+                else
+                {
+                    Console.WriteLine("Número inválido! Por favor, insira um número positivo.");
+                }
+            }
+
+            
+            if (menor != int.MaxValue && maior != int.MinValue)
+            {
+                Console.WriteLine("\nMaior número: " + maior);
+                Console.WriteLine("Menor número: " + menor);
+            }
+            else
+            {
+                Console.WriteLine("\nNenhum número válido foi inserido.");
+            }
+        }
+    }
+}
