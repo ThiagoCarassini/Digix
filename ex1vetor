@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+	static void Main()
+	{
+		int[] numeros = new int[10];
+		Console.WriteLine("Digite 10 nC:meros inteiros:");
+
+		for (int i = 0; i < 10; i++)
+		{
+			bool sucesso = false;
+			while (!sucesso)
+			{
+				Console.Write($"NC:mero {i + 1}: ");
+				string entrada = Console.ReadLine()?.Trim();
+
+				if (int.TryParse(entrada, out numeros[i]))
+				{
+					sucesso = true;
+				}
+				else
+				{
+					Console.WriteLine("Entrada invC!lida. Por favor, digite um nC:mero inteiro.");
+				}
+			}
+		}
+
+		Console.WriteLine("\nNC:meros na ordem direta:");
+		foreach (int num in numeros)
+		{
+			Console.Write(num + " ");
+		}
+
+		Console.WriteLine("\n\nNC:meros na ordem inversa:");
+		for (int i = 9; i >= 0; i--)
+		{
+			Console.Write(numeros[i] + " ");
+		}
+	}
+}
+
