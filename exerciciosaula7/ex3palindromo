@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Digite o tamanho do vetor: ");
+        int tamanho = int.Parse(Console.ReadLine());
+
+        int[] vetor = new int[tamanho];
+
+ 
+        for (int i = 0; i < tamanho; i++)
+        {
+            Console.Write($"Digite o valor para a posição {i + 1}: ");
+            vetor[i] = int.Parse(Console.ReadLine());
+        }
+
+
+        bool ehPalindromo = true;
+        for (int i = 0; i < tamanho / 2; i++)
+        {
+            if (vetor[i] != vetor[tamanho - 1 - i])
+            {
+                ehPalindromo = false;
+                break;
+            }
+        }
+
+        if (ehPalindromo)
+        {
+            Console.WriteLine("O vetor é um palíndromo.");
+        }
+        else
+        {
+            Console.WriteLine("O vetor não é um palíndromo.");
+        }
+    }
+}

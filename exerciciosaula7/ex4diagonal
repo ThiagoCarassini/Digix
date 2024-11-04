@@ -1,0 +1,44 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write("Digite o tamanho da matriz (n x n): ");
+        int n = int.Parse(Console.ReadLine());
+
+        int[,] matriz = new int[n, n];
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                bool entradaValida = false;
+
+                while (!entradaValida)
+                {
+                    Console.Write($"Digite o valor para a posição [{i + 1}, {j + 1}]: ");
+                    string input = Console.ReadLine();
+                    entradaValida = int.TryParse(input, out matriz[i, j]);
+                    
+                    if (!entradaValida)
+                    {
+                        Console.WriteLine("Entrada inválida. Por favor, digite um número inteiro.");
+                    }
+                }
+            }
+        }
+
+        int somaDiagonalPrincipal = 0;
+        int somaDiagonalSecundaria = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            somaDiagonalPrincipal += matriz[i, i];
+            somaDiagonalSecundaria += matriz[i, n - 1 - i];
+        }
+
+        Console.WriteLine($"\nSoma dos elementos da diagonal principal: {somaDiagonalPrincipal}");
+        Console.WriteLine($"Soma dos elementos da diagonal secundária: {somaDiagonalSecundaria}");
+    }
+}

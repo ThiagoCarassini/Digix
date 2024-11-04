@@ -1,0 +1,82 @@
+using System;
+
+class Program
+{
+	static void Main()
+	{
+		int n;
+
+		while (true)
+		{
+			Console.Write("Digite o tamanho da matriz (n x n): ");
+			if (int.TryParse(Console.ReadLine(), out n) && n > 0) break;
+			Console.WriteLine("Por favor, insira um nC:mero inteiro positivo.");
+		}
+
+		int[,] matriz = new int[n, n];
+		Console.WriteLine("Digite os elementos da matriz:");
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				Console.Write($"Elemento [{i},{j}]: ");
+				matriz[i, j] = int.Parse(Console.ReadLine());
+			}
+		}
+
+		Console.WriteLine("\nMatriz Original:");
+		ImprimirMatriz(matriz, n);
+
+		RotacionarMatriz(matriz, n);
+
+		Console.WriteLine("\nMatriz Rotacionada 90 graus HorC!rio:");
+		ImprimirMatriz(matriz, n);
+	}
+
+	static void RotacionarMatriz(int[,] matriz, int n)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = i + 1; j < n; j++)
+			{
+				int temp = matriz[i, j];
+				matriz[i, j] = matriz[j, i];
+				matriz[j, i] = temp;
+			}
+		}
+
+		for (int i = 0; i < n; i++)
+		{
+			ReverterLinha(matriz, i, n);
+		}
+	}
+
+	static void ReverterLinha(int[,] matriz, int linha, int n)
+	{
+		int esquerda = 0;
+		int direita = n - 1;
+
+		while (esquerda < direita)
+		{
+			int temp = matriz[linha, esquerda];
+			matriz[linha, esquerda] = matriz[linha, direita];
+			matriz[linha, direita] = temp;
+
+			esquerda++;
+			direita--;
+		}
+	}
+
+	static void ImprimirMatriz(int[,] matriz, int n)
+	{
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				Console.Write(matriz[i, j] + "\t");
+			}
+			Console.WriteLine();
+		}
+	}
+}

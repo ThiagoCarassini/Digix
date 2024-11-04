@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+	static void Main(string[] args)
+	{
+		int[] numeros = new int[10];
+		int soma = 0;
+
+		for (int i = 0; i < 10; i++)
+		{
+			bool entradaValida = false;
+
+			while (!entradaValida)
+			{
+				Console.Write($"Digite o {i + 1}B: nC:mero: ");
+				string entrada = Console.ReadLine();
+
+				if (int.TryParse(entrada, out int numero))
+				{
+					numeros[i] = numero;
+					soma += numero;
+					entradaValida = true;
+				}
+				else
+				{
+					Console.WriteLine("Entrada invC!lida. Por favor, insira um nC:mero inteiro.");
+				}
+			}
+		}
+
+		double media = (double)soma / 10;
+		Console.WriteLine($"A mC)dia dos valores C): {media}");
+	}
+}

@@ -1,0 +1,54 @@
+using System;
+
+class Program
+{
+	static void Main(string[] args)
+	{
+		int[,] matriz = new int[4, 4];
+
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				bool entradaValida = false;
+
+				while (!entradaValida)
+				{
+					Console.Write($"Digite o valor para a posiC'C#o [{i + 1}, {j + 1}]: ");
+					string entrada = Console.ReadLine();
+
+					if (int.TryParse(entrada, out int numero))
+					{
+						matriz[i, j] = numero;
+						entradaValida = true;
+					}
+					else
+					{
+						Console.WriteLine("Entrada invC!lida. Por favor, insira um nC:mero inteiro.");
+					}
+				}
+			}
+		}
+
+
+		Console.WriteLine("\nMatriz 4x4:");
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
+				Console.Write(matriz[i, j] + "\t");
+			}
+			Console.WriteLine();
+		}
+
+		for (int i = 0; i < 4; i++)
+		{
+			int somaLinha = 0;
+			for (int j = 0; j < 4; j++)
+			{
+				somaLinha += matriz[i, j];
+			}
+			Console.WriteLine($"Soma da linha {i + 1}: {somaLinha}");
+		}
+	}
+}
