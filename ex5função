@@ -1,0 +1,88 @@
+using System;
+
+public class Exercicio5
+{
+	private static void RotacionarMatriz(int[,] matriz)
+	{
+		int n = matriz.GetLength(0);
+		int[,] matrizRotacionada = new int[n, n];
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				matrizRotacionada[j, n - i - 1] = matriz[i, j];
+			}
+		}
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				matriz[i, j] = matrizRotacionada[i, j];
+			}
+		}
+	}
+
+	public static void Main()
+	{
+		int n;
+		while (true)
+		{
+			Console.Write("Digite o tamanho da matriz quadrada (n x n): ");
+			if (int.TryParse(Console.ReadLine(), out n) && n > 0)
+			{
+				break;
+			}
+			else
+			{
+				Console.WriteLine("Valor invC!lido. Digite um nC:mero inteiro positivo.");
+			}
+		}
+
+		int[,] matriz = new int[n, n];
+		Console.WriteLine($"Digite os valores para a matriz {n}x{n}:");
+
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				while (true)
+				{
+					Console.Write($"Digite o valor para a posiC'C#o [{i + 1}, {j + 1}]: ");
+					if (int.TryParse(Console.ReadLine(), out int valor))
+					{
+						matriz[i, j] = valor;
+						break;
+					}
+					else
+					{
+						Console.WriteLine("Valor invC!lido. Por favor, insira um nC:mero vC!lido.");
+					}
+				}
+			}
+		}
+
+		Console.WriteLine("\nMatriz original:");
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				Console.Write(matriz[i, j] + " ");
+			}
+			Console.WriteLine();
+		}
+
+		RotacionarMatriz(matriz);
+
+		Console.WriteLine("\nMatriz rotacionada 90 graus no sentido horC!rio:");
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < n; j++)
+			{
+				Console.Write(matriz[i, j] + " ");
+			}
+			Console.WriteLine();
+		}
+	}
+}

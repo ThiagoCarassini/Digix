@@ -1,0 +1,41 @@
+using System;
+
+public class Exercicio3
+{
+	public static bool VerificarPalindromo(int[] vetor)
+	{
+		int n = vetor.Length;
+		for (int i = 0; i < n / 2; i++)
+		{
+			if (vetor[i] != vetor[n - i - 1])
+				return false;
+		}
+		return true;
+	}
+
+	public static void Main()
+	{
+		int[] vetor = new int[5];
+		Console.WriteLine("Digite 5 nC:meros para verificar se o vetor C) um palC-ndromo:");
+
+		for (int i = 0; i < vetor.Length; i++)
+		{
+			while (true)
+			{
+				Console.Write($"NC:mero {i + 1}: ");
+				if (int.TryParse(Console.ReadLine(), out int valor))
+				{
+					vetor[i] = valor;
+					break;
+				}
+				else
+				{
+					Console.WriteLine("Valor invC!lido. Por favor, insira um nC:mero vC!lido.");
+				}
+			}
+		}
+
+		bool resultado = VerificarPalindromo(vetor);
+		Console.WriteLine(resultado ? "O vetor C) um palC-ndromo." : "O vetor nC#o C) um palC-ndromo.");
+	}
+}

@@ -1,0 +1,49 @@
+using System;
+
+public class Exercicio2
+{
+    public delegate int SomarLinha(int[] linha);
+    
+    public static void Main()
+    {
+        int[,] matriz = new int[4, 4];
+
+        Console.WriteLine("Digite os valores para a matriz 4x4:");
+
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            for (int j = 0; j < matriz.GetLength(1); j++)
+            {
+                while (true)
+                {
+                    Console.Write($"Digite o valor para a posição [{i + 1}, {j + 1}]: ");
+                    if (int.TryParse(Console.ReadLine(), out int valor))
+                    {
+                        matriz[i, j] = valor;
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Valor inválido. Por favor, insira um número válido.");
+                    }
+                }
+            }
+        }
+
+        SomarLinha somarLinha = delegate (int[] linha)
+        {
+            int soma = 0;
+            foreach (var valor in linha)
+            {
+                soma += valor;
+            }
+            return soma;
+        };
+
+        for (int i = 0; i < matriz.GetLength(0); i++)
+        {
+            int soma = somarLinha(new int[] { matriz[i, 0], matriz[i, 1], matriz[i, 2], matriz[i, 3] });
+            Console.WriteLine($"Soma da linha {i + 1}: {soma}");
+        }
+    }
+}

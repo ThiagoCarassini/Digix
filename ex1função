@@ -1,0 +1,31 @@
+using System;
+
+public class Exercicio1
+{
+    public delegate double CalcularMedia(int[] valores);
+
+    public static void Main()
+    {
+        int[] vetor = new int[10];
+        
+        Console.WriteLine("Digite 10 números:");
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            Console.Write($"Número {i + 1}: ");
+            vetor[i] = int.Parse(Console.ReadLine());
+        }
+
+        CalcularMedia calcularMedia = delegate (int[] valores)
+        {
+            double soma = 0;
+            foreach (var valor in valores)
+            {
+                soma += valor;
+            }
+            return soma / valores.Length;
+        };
+
+        double resultado = calcularMedia(vetor);
+        Console.WriteLine($"A média dos valores inseridos é: {resultado}");
+    }
+}
