@@ -1,0 +1,52 @@
+// using System;
+
+// namespace Aula10
+// {
+//     internal class Program
+//     {
+//         public static void Main(string[] args)
+//         {
+//             int[] numeros = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//             Console.WriteLine("Números pares no vetor:");
+//             ExibirPares(numeros);
+//         }
+
+//         static void ExibirPares(int[] numeros)
+//         {
+//             if (numeros.Length == 0)
+//                 return;
+
+//             if (numeros[0] % 2 == 0)
+//                 Console.WriteLine(numeros[0]);
+
+//             ExibirPares(numeros[1..]);
+//         }
+//     }
+// }
+
+
+using System;
+
+namespace Aula10
+{
+    internal class Program
+    {
+        public static void Main(string[] args)
+        {
+            int[] numeros = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            Console.WriteLine("Números ímpares no vetor:");
+            ExibirImpares(numeros);
+        }
+
+        static void ExibirImpares(int[] numeros)
+        {
+            if (numeros.Length == 0)
+                return;
+
+            if (numeros[0] % 2 != 0)
+                Console.WriteLine(numeros[0]);
+
+            ExibirImpares(numeros[1..]);
+        }
+    }
+}

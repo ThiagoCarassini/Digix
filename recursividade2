@@ -1,0 +1,31 @@
+using System;
+using System.Linq;
+
+namespace aula10
+{
+    internal class Program
+    {
+        public static void teste(string[] args)
+        {
+            System.Console.WriteLine(idade.GetType());
+
+            var altura = 1.75;
+            System.Console.WriteLine(altura);
+            System.Console.WriteLine(altura.GetType());
+
+            const double pi = 3.1415;
+            System.Console.WriteLine(pi);
+            System.Console.WriteLine(pi.GetType());
+
+            var lista new list<int> {1, 2, 3, 4, 5};
+            System.Console.WriteLine(lista.GetType());
+
+            foreach(var item in lista)
+            {
+                System.Console.WriteLine(item);
+            };
+
+
+        }
+    }
+}
